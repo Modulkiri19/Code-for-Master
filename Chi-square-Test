@@ -1,0 +1,7 @@
+## association of tree planters and home garden size 
+chisq.test(HG_Size,D1V1$PlantT,simulate.p.value = TRUE)
+
+	Pearson's Chi-squared test with simulated p-value (based on 2000 replicates)
+
+data:  HG_Size and D1V1$PlantT
+X-squared = 5.7761, df = NA, p-value = 0.05197
