@@ -1,0 +1,6 @@
+## Tree timber planter 
+## Recode timber tree planter to numeric 
+D1V1$PlantT = factor(D1V1$PlantT, 
+   levels = c("1. yes", "2. No"), 
+   labels = c(1,0))
+write.xlsx(D1V1,"D1V2.xlsx")
