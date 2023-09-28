@@ -11,3 +11,20 @@ alternative hypothesis: true correlation is not equal to 0
 sample estimates:
       cor 
 0.7403181 
+
+## Correlation between homegarden size and total income for tree planters 
+cor.test(D1V3$Homegar_Size[D1V3$PlantT=="1"],D1V3$TotalS[D1V3$PlantT=="1"])
+
+	Pearson's product-moment correlation
+
+data:  D1V3$Homegar_Size[D1V3$PlantT == "1"] and D1V3$TotalS[D1V3$PlantT == "1"]
+t = 6.6948, df = 18, p-value = 2.804e-06
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.6421878 0.9369670
+sample estimates:
+      cor 
+0.8446693 
+
+
+
