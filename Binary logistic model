@@ -1,0 +1,15 @@
+attach(Data_Stata)
+model1 <- glm(plantt ~ edu_HIGH + relative + awaress, data = Data_Stata, family = binomial(link = "logit"))
+summary(model1)
+odd1 <- exp(model1$coefficients)
+model2 <- glm(plantt ~ age + homegar_size + hh_m + edu_HIGH + relative + awaress, data = Data_Stata, family = binomial(link = "logit"))
+summary(model2)
+odd2 <- exp(model2$coefficients)
+model3 <- glm(plantt ~ age + hh_m + homegar_size + edu_HIGH + relative, data = Data_Stata, family = binomial(link = "logit")) #Use this model
+summary(model3)
+odd3 <- exp(model3$coefficients)
+##install.packages("stargazer")
+library(stargazer)
+stargazer(model1, odd1, model2,odd2, model3,odd3, dep.var.labels = "Planting Trees", 
+covariate.labels = c("Age", "Home Garden Size", "Household Size", "High Education", "Relative", "Awareness", "Intercept"), 
+title = "Table 1: Logistic regression results of determinants of tree planting", type = "text", out = "Table_1.doc")
