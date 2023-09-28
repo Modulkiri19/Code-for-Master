@@ -1,1 +1,13 @@
-
+## Graphics/charts
+D1V3$Homegar_Size <- D1V3$Homegar_Size/10000
+windowsFonts(A = windowsFont("Times New Roman"))
+plot(D1V3$Homegar_Size[D1V3$PlantT=="1"],D1V3$D_cochinchinensis[D1V3$PlantT=="1"],pch=1,
+cex=1.5, xlab="Home garden Size (ha)", ylab="Number of D. Cochinchinensis",family = "A",cex.lab=1.3, ylim=c(10,550),xlim=c(0,10))
+abline(reg=lm(D1V3$D_cochinchinensis[D1V3$PlantT=="1"]~D1V3$Homegar_Size[D1V3$PlantT=="1"]),col="blue")
+sequence<-order(D1V3$Homegar_Size[D1V3$PlantT=="1"])
+lines(D1V3$D_cochinchinensis[D1V3$PlantT=="1"],D1V3$Homegar_Size[D1V3$PlantT=="1"]),col="blue")
+windowsFonts(A = windowsFont("Times New Roman"))
+ggplot(data=Tree, aes(x=Land_S, y=D_cochinchinensis, group=1)) +
+  geom_line()+ xlab(" Homegarden size (ha)") + ylab("Number of D.cochinchinensis")+
+  theme_light()+
+  geom_point()+theme(text = element_text(family = "A",size=12))
