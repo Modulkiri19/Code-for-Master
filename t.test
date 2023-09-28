@@ -1,0 +1,2 @@
+t.test(D$DBH,mu=7.2)
+t.test(D$Hight,mu=6.5)
