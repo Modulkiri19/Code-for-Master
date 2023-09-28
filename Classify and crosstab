@@ -1,0 +1,21 @@
+## Demographic information
+## Age classification 
+Age_G<- cut(D1$Age,breaks=c(20,30,40,60,80), labels=c("20-30","31-40","41-60","61-80"))
+D1$Age_G <-Age_G
+
+## Crosstab between Age and Gender 
+source("http://pcwww.liv.ac.uk/~william/R/crosstab.r")
+crosstab(D1, row.vars = "Age_G", col.vars = "Gender", type = "r")
+crosstab(D1, row.vars = "Age_G", col.vars = "Gender", type = "c")
+crosstab(D1, row.vars = "Age_G", col.vars = "Gender", type = c("t","f"), style = "wide", addmargins = FALSE)
+
+write.csv(Age_G$table,"Age vs Gender Number.csv") 
+
+Age_Gen<- crosstab(D1, row.vars = "Age_G", col.vars = "Gender", type = c("t","f"), style = "wide", addmargins = FALSE)
+write.csv(Age_Gen$table,"Age vs Gender Number1.csv") 
+
+
+
+
+
+
