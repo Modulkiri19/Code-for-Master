@@ -1,0 +1,10 @@
+## Working multiple response for income source
+##Replae NA to 0 
+D1$Q6_5[is.na(D1Q6_5)] <- 0
+D1$Q6_6[is.na(D1$Q6_6)] <- 0
+D1$Q6_7[is.na(D1$Q6_7)] <- 0
+D1$Q6_8[is.na(D1$Q6_8)] <- 0
+MC<-colMeans(D1[8:16])
+Total_incomeS<-rowSums(D1[8:16])
+D1$Total_incomeS<-Total_incomeS
+write.xlsx(D1,"D1V1.xlsx")
